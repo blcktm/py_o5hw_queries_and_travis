@@ -6,23 +6,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <table class="table">
-                        <tr>
-                            <th>Groups</th>
-                        </tr>
-                        {% for group in groups %}
-                            <tr>
-                                <td>{{group.name}}</td>
-                            </tr>
-                        {% endfor %}
-                    </table>
+                     <div class="col-md-12">
+                         <form method="get">
+                             <div class="row">
+                                 <div class="col-md-5">
+                                     <input class="form-control" type="search" name="filter" value="{{filter}}">
+                                 </div>
+                                 <div class="col-md-5">
+                                     <input type="submit" class="btn btn-primary" value="Filter by age, first_name, last_name">
+                                 </div>
+                             </div>
+                         </form>
+                     </div>
                      <table class="table">
                         <tr>
-                            <th>Students</th>
+                            <th>age</th>
+                            <th>first_name</th>
+                            <th>last_name</th>
                         </tr>
-                        {% for student in students %}
+                        {% for teacher in teachers %}
                             <tr>
-                                <td>{{student.name}}</td>
+                                <td>{{teacher.age}}</td>
+                                <td>{{teacher.first_name}}</td>
+                                <td>{{teacher.last_name}}</td>
                             </tr>
                         {% endfor %}
                     </table>
@@ -31,4 +37,3 @@
         </div>
     </body>
 </html>
-
